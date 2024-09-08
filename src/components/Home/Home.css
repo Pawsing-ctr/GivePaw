@@ -1,0 +1,42 @@
+
+.left-content{
+  background: linear-gradient(white, #F98E2C);
+  padding-bottom: 100px;
+}
+
+
+
+.title-content{
+  font-size: 96px;
+}
+
+.img-home{
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.main{
+  border-radius: 20px;
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.description-content{
+    font-size: 32px;
+    font-family: "Kurale", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title-content{
+  font-family: "Kurale", serif;
+}
+
+.home-button{
+  color: #ffff;
+  font-size: 50px;
+  background-color: #F98E2C;
+  border-radius: 15px;
+  padding: 8px 136px;
+}
