@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 69px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.login-button {
+  background-color: orange;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+} 
