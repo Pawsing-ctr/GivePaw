@@ -1,12 +1,14 @@
 import React from "react";
 import "./Header.css";
 import { navigationLink } from "../../constants/navigationLink";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { RoutePass } from "../../constants/routePass";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="header">
-      <div className="logo">
+      <div onClick={() => navigate(RoutePass.Home)} className="logo">
         <img src="../Logov2.png" alt="" />
       </div>
       <nav className="nav-menu">

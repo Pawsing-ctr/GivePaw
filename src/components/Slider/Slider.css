@@ -1,0 +1,10 @@
+.img-saved-animal{
+  width: 428px;
+  height: 526px;
+  flex-shrink: 0;
+}
+
+img {
+  margin-right: 10px; /* Отступ между слайдами */
+  border-radius: 10
+}

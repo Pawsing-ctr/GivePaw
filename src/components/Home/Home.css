@@ -1,10 +1,21 @@
 
 .left-content{
-  background: linear-gradient(white, #F98E2C);
-  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
 }
 
-
+.background-img{
+  z-index: -1;
+  position: absolute;
+  background: linear-gradient(180deg, #FFF 0%, #FAE6D4 45.5%, #F8A340 100%);
+  top: 0;
+  left: -130px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 70px 0;
+  
+}
 
 .title-content{
   font-size: 96px;
@@ -17,10 +28,13 @@
 }
 
 .main{
-  border-radius: 20px;
+  position: relative;
   display: flex;
-  padding-bottom: 100px;
+  border-radius: 0px 0px 70px 0px;
+  padding: 32px 0 100px 0;
 }
+
+
 
 .description-content{
     font-size: 32px;
@@ -34,9 +48,117 @@
 }
 
 .home-button{
-  color: #ffff;
-  font-size: 50px;
-  background-color: #F98E2C;
-  border-radius: 15px;
-  padding: 8px 136px;
+  display: flex;
+  padding: 9px 136px 9px 124px;
+  align-items: center;
+  border-radius: 20px;
+  background: #F98E2C;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 48px;
+  color: #FFF;
+}
+
+.zxc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.live-count{
+  width: 100%;
+}
+
+.border-block{
+  background: #000;
+  width: 1px;
+  height: 175px;
+}
+
+
+/* .stat-count{
+  padding: 80px 130px;
+} */
+
+.title-save{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+
+.live-number{
+  color: #000;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.live-text{
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px; 
+}
+
+.swipe-slide{
+  cursor: pointer;
+}
+
+.save-kitten{
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.swipe-slide{
+  display: flex;
+  gap: 22px;
+}
+
+
+.find-master-title{
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 72px; 
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-1{
+background-color: green;
+}
+.item-2{
+  background-color: black;
+}
+.item-3{
+  background-color: blue;
+}
+.item-4{
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
 }

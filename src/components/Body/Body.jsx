@@ -6,6 +6,7 @@ import Animals from "../Animals/Animals";
 import Volunteers from "../Volunteers/Volunteers";
 import StartVolunteers from "../StartVolunteers/StartVolunteers";
 import Home from "../Home/Home";
+import "./Body.css";
 
 const Body = () => {
   return (

@@ -26,3 +26,7 @@
   border-radius: 15px;
   color:#FFFFFF;
 } 
+
+.logo{
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.description-platform{
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; 
+}
+
+.title-text{
+  color: #000;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px; 
+}
+
+.title-information{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.all-text{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
