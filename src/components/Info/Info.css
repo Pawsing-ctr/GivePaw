@@ -24,3 +24,10 @@
   flex-direction: column;
   gap: 80px;
 }
+
+.color-text-info{
+  color: #F98E2C;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px; 
+}

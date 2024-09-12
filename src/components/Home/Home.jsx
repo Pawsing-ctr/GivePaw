@@ -49,7 +49,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="save-kitten">
+      {/* <div className="save-kitten">
         <div className="find-master">
           <p className="find-master-title">Нашли хозяина</p>
         </div>
@@ -57,7 +57,7 @@ const Home = () => {
           <img src="../стрелка влево.png" alt="" />
           <img src="../стрелка вправо.png" alt="" />
         </button>
-      </div>
+      </div> */}
       <div>
         <Slider />
       </div>

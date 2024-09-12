@@ -3,5 +3,5 @@ export const RoutePass = {
   Animal: "/animal",
   Volunteers: "/volunteers",
   StartVolunteer: "/startVolunteer",
-  Home: "/home",
+  Home: "",
 };

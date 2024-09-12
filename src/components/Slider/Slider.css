@@ -1,10 +1,36 @@
-.img-saved-animal{
-  width: 428px;
-  height: 526px;
-  flex-shrink: 0;
+
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 20px;
 }
 
-img {
-  margin-right: 10px; /* Отступ между слайдами */
-  border-radius: 10
+.carousel-text {
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 72px; 
 }
+
+.slider-arrows {
+  display: flex;
+  gap: 32px;
+}
+
+.custom-prev-arrow,
+.custom-next-arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-prev-arrow img,
+.custom-next-arrow img {
+  width: 58px;
+  height: auto;
+}
+
+
