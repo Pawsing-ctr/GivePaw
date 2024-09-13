@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { navigationLink } from "../../constants/navigationLink";
 import { Link, useNavigate } from "react-router-dom";
 import { RoutePass } from "../../constants/routePass";
+import cn from "classnames";
 
 const Header = () => {
+  const [activeLink, setActiveLink] = useState(1);
+  const handleSetActiveLink = (id) => {
+    setActiveLink(id);
+  };
   const navigate = useNavigate();
+
   return (
     <div className="header">
       <div onClick={() => navigate(RoutePass.Home)} className="logo">
@@ -13,7 +19,12 @@ const Header = () => {
       </div>
       <nav className="nav-menu">
         {navigationLink.map((link) => (
-          <Link key={link.to} className="link-item" to={link.to}>
+          <Link
+            onClick={() => handleSetActiveLink(link.id)}
+            key={link.to}
+            className={cn("link-item", { isActive: link.id === activeLink })}
+            to={link.to}
+          >
             {link.title}
           </Link>
         ))}

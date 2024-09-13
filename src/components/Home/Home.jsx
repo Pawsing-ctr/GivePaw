@@ -1,7 +1,8 @@
 import React from "react";
 import "../Home/Home.css";
-import Slider from "../Slider/Slider.jsx";
 import Footer from "../Footer/Footer.jsx";
+import { petsSlides } from "../../constants/slide.js";
+import PetSlider from "../PetSlider/PetSlider.jsx";
 
 const Home = () => {
   return (
@@ -49,17 +50,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <div className="save-kitten">
-        <div className="find-master">
-          <p className="find-master-title">Нашли хозяина</p>
-        </div>
-        <button className="swipe-slide">
-          <img src="../стрелка влево.png" alt="" />
-          <img src="../стрелка вправо.png" alt="" />
-        </button>
-      </div> */}
       <div>
-        <Slider />
+        <PetSlider slides={petsSlides} />
       </div>
       <div>
         <Footer />

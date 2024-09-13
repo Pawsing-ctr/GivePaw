@@ -13,7 +13,6 @@
 
 .nav-menu a {
   text-decoration: none;
-  color: black;
   font-size: 20px;
 }
 
@@ -29,4 +28,17 @@
 
 .logo{
   cursor: pointer;
+}
+.link-item{
+  color: black;
+  transition: 0.3s linear;
+}
+
+.link-item:hover{
+  color: #F98E2C;
+  transition: 0.3s linear;
+}
+
+.isActive{
+  color: #F98E2C;
 }

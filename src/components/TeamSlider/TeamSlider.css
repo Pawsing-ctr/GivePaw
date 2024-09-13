@@ -1,0 +1,36 @@
+
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 20px;
+}
+
+.carousel-text {
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 72px; 
+}
+
+.slider-arrows {
+  display: flex;
+  gap: 32px;
+}
+
+.custom-prev-arrow,
+.custom-next-arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.team{
+  border-radius: 20px;
+  width: 100%;
+  height: 526px;
+  object-fit: cover;
+}
+
