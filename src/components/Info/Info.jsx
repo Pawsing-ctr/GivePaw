@@ -1,12 +1,12 @@
 import React from "react";
 import "./Info.css";
 import Footer from "../Footer/Footer";
-import TeamSlider from "../TeamSlider/TeamSlider";
-import { teamSlides } from "../../constants/slide";
+import Slider from "../Slider/Slider";
+import { teamSlides, teamSlidesTitle } from "../../constants/slide";
 
 const Info = () => {
   return (
-    <div className="">
+    <>
       <div className="title-information">
         <div className="platform-inf">
           <p className="title-text">О платформе “Дай лапу”</p>
@@ -39,13 +39,12 @@ const Info = () => {
         </div>
       </div>
       <div className="team-slider">
-        <TeamSlider slides={teamSlides} />
-        {teamSlides.teamName}
+        <Slider sliderTitle={teamSlidesTitle} slides={teamSlides} />
       </div>
       <div>
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

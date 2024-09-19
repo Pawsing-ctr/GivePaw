@@ -3,3 +3,7 @@
   flex-direction: column;
   gap: 80px;
 }
+
+.default-page{
+  padding: 30px 130px 0px 130px;
+}

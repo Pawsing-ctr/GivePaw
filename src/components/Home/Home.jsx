@@ -1,8 +1,8 @@
 import React from "react";
 import "../Home/Home.css";
 import Footer from "../Footer/Footer.jsx";
-import { petsSlides } from "../../constants/slide.js";
-import PetSlider from "../PetSlider/PetSlider.jsx";
+import { petsSliderTitle, petsSlides } from "../../constants/slide.js";
+import PetSlider from "../Slider/Slider.jsx";
 
 const Home = () => {
   return (
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <PetSlider slides={petsSlides} />
+        <PetSlider sliderTitle={petsSliderTitle} slides={petsSlides} />
       </div>
       <div>
         <Footer />

@@ -152,7 +152,9 @@ background-color: green;
 }
 
 
-
+.stat-count{
+  padding: 80px 0;
+}
 
 
 
@@ -164,4 +166,5 @@ background-color: green;
 	padding: 0px;
 	margin: 0px;
 	border: none;
+  box-sizing: border-box;
 }

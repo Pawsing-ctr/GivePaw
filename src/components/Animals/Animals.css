@@ -1,0 +1,32 @@
+.animal-title{
+  color: #000;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 72px;
+ 
+}
+
+.animal-img{
+  border-radius: 20px;
+  width: 385px;
+  height: 526px;
+  height: 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+
+.img-block{
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  flex: 1 1 20%;
+  background-color: #fff;
+}
+
+.animal-img-block{
+  display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+

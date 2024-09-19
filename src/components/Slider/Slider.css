@@ -34,3 +34,16 @@
   object-fit: cover;
 }
 
+.team-name-title{
+  color: #000;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px; 
+}
+
+.positoin-worker-title{
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px; 
+}

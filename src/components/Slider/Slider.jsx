@@ -1,12 +1,12 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./PetSlider.css";
+import "./Slider.css";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useCallback, useRef } from "react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import "swiper/css/autoplay";
 
-const PetSlider = ({ slides }) => {
+const PetSlider = ({ slides, sliderTitle }) => {
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -21,7 +21,7 @@ const PetSlider = ({ slides }) => {
   return (
     <div className="carousel-container">
       <div className="slider-header">
-        <span className="carousel-text">Нашли хозяина</span>
+        <span className="carousel-text">{sliderTitle}</span>
         <div className="slider-arrows">
           <button
             onClick={handlePrev}
@@ -41,7 +41,7 @@ const PetSlider = ({ slides }) => {
         </div>
       </div>
       <Swiper
-        modules={[Autoplay]}
+        // modules={[Autoplay]}
         spaceBetween={60}
         grabCursor={true}
         loop={true}
@@ -54,7 +54,15 @@ const PetSlider = ({ slides }) => {
       >
         {slides.map((el) => (
           <SwiperSlide key={el.id}>
-            <img className="pet" src={el.src} alt="#" />
+            <div>
+              <img className="pet" src={el.src} alt="#" />
+              {!!el.teamName && (
+                <div className="team-name-title">{el.teamName}</div>
+              )}
+              {!!el.teamPosition && (
+                <div className="positoin-worker-title">{el.teamPosition}</div>
+              )}
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
