@@ -1,0 +1,67 @@
+
+
+.help-modal-title{
+  color: #000;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 54px; 
+  font-size: 36px;
+}
+
+.help-modal-donate{
+  color: #898989;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px; 
+}
+
+.sum-number{
+  color: #F98E2C;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px; 
+}
+
+.all-help-modal{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.help-modal-input{
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 70px;
+  padding: 8px 32px;
+  max-width: auto;
+  width: 1575px;
+}
+
+.donation-button{
+  border-radius: 20px;
+  background: #F98E2C;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 8px 32px;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 600;
+    line-height: 36px; 
+}
+
+.help-modal-input::placeholder{
+ font-size: 40px;
+}
+
+.help-modal-sum{
+  display: flex;
+  justify-content: space-between;
+}
+
+.help-modal-text{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+

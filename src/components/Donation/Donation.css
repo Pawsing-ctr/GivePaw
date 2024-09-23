@@ -1,0 +1,61 @@
+
+
+.help-number{
+  color: #000;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px; 
+}
+
+.help-number-opis{
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+}
+
+.donation-page{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.header-video{
+  color: #000;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 72px; 
+}
+
+.opis-video{
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px; 
+}
+
+.block-text-video{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.video{
+  width: 1660px;
+  height: 804px;
+  border-radius: 20px;
+}
+
+.video-title{
+  color: #000;
+font-size: 48px;
+font-weight: 800;
+line-height: 72px; 
+}
+
+.video-comment{
+  color: #000;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+}

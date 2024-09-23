@@ -1,7 +1,7 @@
 import Animals from "../components/Animals/Animals";
+import Donation from "../components/Donation/Donation";
 import Home from "../components/Home/Home";
 import Info from "../components/Info/Info";
-import StartVolunteers from "../components/StartVolunteers/StartVolunteers";
 import Volunteers from "../components/Volunteers/Volunteers";
 import { RoutePass } from "./routePass";
 
@@ -19,8 +19,8 @@ export const routes = [
     element: <Volunteers />,
   },
   {
-    path: RoutePass.StartVolunteer,
-    element: <StartVolunteers />,
+    path: RoutePass.Donation,
+    element: <Donation />,
   },
   {
     path: RoutePass.Home,

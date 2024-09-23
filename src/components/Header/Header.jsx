@@ -5,17 +5,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { RoutePass } from "../../constants/routePass";
 import cn from "classnames";
 import ReactModal from "react-modal";
-import Input from "../Input/Input";
-import { registrationInput } from "../../constants/input";
+import InputRegistration from "../InputRegistration/InputRegistration.jsx";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(1);
-
-  const [sureName, setSureName] = useState("");
-  // const [activeLink, setActiveLink] = useState(1);
-  // const [activeLink, setActiveLink] = useState(1);
-  // const [activeLink, setActiveLink] = useState(1);
-  // const [activeLink, setActiveLink] = useState(1);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   const handleSetActiveLink = (id) => {
     setActiveLink(id);
@@ -23,15 +18,36 @@ const Header = () => {
   const navigate = useNavigate();
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const handleCloseModal = () => {
-    setIsOpenModal(false);
-  };
-  const handleOpenModal = () => {
-    setIsOpenModal(true);
-  };
+  // const handleCloseModal = () => {
+  //   setIsOpenModal(false);
+  // };
+  // const handleOpenModal = () => {
+  //   setIsOpenModal(true);
+  // };
 
   const closeModal = () => {
     setIsOpenModal(false);
+    setIsLoginModalOpen(false);
+  };
+
+  const openLoginModal = () => {
+    setIsLoginModalOpen(true);
+    setIsRegisterModalOpen(false);
+  };
+
+  const openRegisterModal = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(true);
+  };
+
+  const closeModals = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(false);
+  };
+
+  const closeRegisterModal = () => {
+    setIsLoginModalOpen(true);
+    setIsRegisterModalOpen(false);
   };
 
   return (
@@ -51,50 +67,63 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-      <button onClick={handleOpenModal} className="login-button">
+      <button onClick={openLoginModal} className="login-button">
         Войти
       </button>
       <ReactModal
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         className={"modal"}
-        isOpen={isOpenModal}
+        isOpen={isLoginModalOpen}
+        overlayClassName="modal-overlay"
+      >
+        <div className="all-model">
+          <div>
+            <p className="modal-title">Вход</p>
+            <p onClick={openRegisterModal} className="modal-opis">
+              Зарегистрироваться
+            </p>
+          </div>
+          <div className="login-input-block">
+            <input
+              placeholder="Номер телефона"
+              className="login-input"
+              type="number"
+            />
+            <input
+              placeholder="Пароль"
+              className="login-input"
+              type="password"
+            />
+          </div>
+          <div>
+            <p className="forgot-your-password">Забыли пароль?</p>
+          </div>
+          <div>
+            <button className="registration-button">Войти</button>
+          </div>
+        </div>
+      </ReactModal>
+
+      <ReactModal
+        isOpen={isRegisterModalOpen}
+        onRequestClose={closeModals}
+        shouldCloseOnOverlayClick={true}
+        className={"modal"}
         overlayClassName="modal-overlay"
       >
         <div className="all-modal-registration">
-          <div>
-            <p className="registration-title">Стать волонтёром</p>
-          </div>
-          <div className="asdasd">
-            <p className="registration">Регистрация</p>
+          <div className="all-registration-page">
+            <div>
+              <p className="registration">Регистрация</p>
+            </div>
+            <div>
+              <p onClick={closeRegisterModal} className="modal-opis">
+                Уже есть учетная запись
+              </p>
+            </div>
             <div className="input-block-registration">
-              <input
-                placeholder="Фамилия"
-                onChange={(event) => setSureName(event.target.value)}
-                value={sureName}
-                className="registration-input"
-                type="text"
-              />
-              <input
-                placeholder="Имя"
-                className="registration-input"
-                type="text"
-              />
-              <input
-                placeholder="Номер телефона"
-                className="registration-input"
-                type="text"
-              />
-              <input
-                placeholder="Придумайте пароль"
-                className="registration-input"
-                type="password"
-              />
-              <input
-                placeholder="Подтвердите пароль"
-                className="registration-input"
-                type="password"
-              />
+              <InputRegistration />
             </div>
           </div>
           <div>

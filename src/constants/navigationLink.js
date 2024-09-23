@@ -17,8 +17,8 @@ export const navigationLink = [
     id: 3,
   },
   {
-    title: "Стать волонтером",
-    to: RoutePass.StartVolunteer,
+    title: "Пожертвование",
+    to: RoutePass.Donation,
     id: 4,
   },
 ];

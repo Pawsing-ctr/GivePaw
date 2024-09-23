@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Home/Home.css";
 import Footer from "../Footer/Footer.jsx";
 import { petsSliderTitle, petsSlides } from "../../constants/slide.js";
 import PetSlider from "../Slider/Slider.jsx";
+import ReactModal from "react-modal";
+import HelpCount from "../HelpCount/HelpCount.jsx";
+import DonationModal from "../DonationModal/DonationModal.jsx";
 
 const Home = () => {
+  const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+
+  const handleOpenHelpModal = () => {
+    setIsHelpModalOpen(true);
+  };
+
+  const closeHelpModal = () => {
+    setIsHelpModalOpen(false);
+  };
+
   return (
-    <>
+    <div className="home-page">
       <div className="main">
         <div className="background-img" />
         <div className="left-content">
@@ -17,7 +30,9 @@ const Home = () => {
             Животные в нас нуждаются, они хотят поддержки
           </p>
           <div>
-            <button className="home-button">Помочь сейчас</button>
+            <button onClick={handleOpenHelpModal} className="home-button">
+              Помочь сейчас
+            </button>
           </div>
         </div>
         <div className="right-content">
@@ -26,37 +41,23 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="stat-count">
-        <div className="zxc">
-          <div className="live-count">
-            <div className="title-save">
-              <p className="live-number">54</p>
-              <p className="live-text">Животных спасено</p>
-            </div>
-          </div>
-          <div className="border-block" />
-          <div className="live-count">
-            <div className="title-save">
-              <p className="live-number">70,000 ₽</p>
-              <p className="live-text">Собрано средств</p>
-            </div>
-          </div>
-          <div className="border-block" />
-          <div className="live-count">
-            <div className="title-save">
-              <p className="live-number">48</p>
-              <p className="live-text">Животных нашли дом</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HelpCount />
       <div>
         <PetSlider sliderTitle={petsSliderTitle} slides={petsSlides} />
       </div>
       <div>
         <Footer />
       </div>
-    </>
+      <ReactModal
+        isOpen={isHelpModalOpen}
+        onRequestClose={closeHelpModal}
+        shouldCloseOnOverlayClick={true}
+        className={"modal"}
+        overlayClassName="modal-overlay"
+      >
+        <DonationModal />
+      </ReactModal>
+    </div>
   );
 };
 
