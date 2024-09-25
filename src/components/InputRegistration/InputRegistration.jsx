@@ -1,15 +1,15 @@
 import { registrationInput } from "../../constants/input";
 import "./InputRegistration.css";
 
-const inputRegistration = () => {
+const InputRegistration = () => {
   return (
     <div className="registration-void">
       {registrationInput.map((el) => (
         <div>
           <input
-            className={"registration-input"}
+            className="registration-input"
             placeholder={el.placeholder}
-            type="text"
+            type={el.type}
           />
         </div>
       ))}
@@ -17,4 +17,4 @@ const inputRegistration = () => {
   );
 };
 
-export default inputRegistration;
+export default InputRegistration;

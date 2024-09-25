@@ -5,25 +5,94 @@ import { Link, useNavigate } from "react-router-dom";
 import { RoutePass } from "../../constants/routePass";
 import cn from "classnames";
 import ReactModal from "react-modal";
-import InputRegistration from "../InputRegistration/InputRegistration.jsx";
+import { enqueueSnackbar, SnackbarProvider } from "notistack";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "../../redux/slice/userSlice";
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState(1);
+  const [activeLink, setActiveLink] = useState(0);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const [sureName, setSureName] = useState("");
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [replayPassword, setReplayPassword] = useState("");
+  const [loginPhoneNumber, setLoginPhoneNumber] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const { user } = useSelector((state) => state.user);
+  const localUser = localStorage.getItem("newUser");
+  console.log(user);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const handleError = (message) => {
+    enqueueSnackbar({
+      message: message,
+      variant: "error",
+    });
+  };
+
+  const handleSuccess = (message) => {
+    enqueueSnackbar({
+      message: message,
+      variant: "success",
+    });
+  };
+
+  const handleLogin = () => {
+    if (!loginPhoneNumber.trim()) {
+      return handleError("Введите номер!");
+    }
+    if (!loginPassword.trim()) {
+      return handleError("Введите пароль!");
+    }
+  };
+
+  const handleRegistration = () => {
+    if (!sureName.trim()) {
+      return handleError("Введите фамилию!");
+    }
+    if (!name.trim()) {
+      return handleError("Введите имя!");
+    }
+    if (!phoneNumber.trim()) {
+      return handleError("Введите номер!");
+    }
+    if (!password.trim()) {
+      return handleError("Введите пароль!");
+    }
+    if (!replayPassword.trim()) {
+      return handleError("Введите повторно пароль!");
+    }
+    if (password !== replayPassword) {
+      return handleError("Пароли не совпадают!");
+    }
+
+    const newUser = {
+      sureName,
+      name,
+      phoneNumber,
+      password,
+    };
+
+    dispatch(setUser(newUser));
+
+    localStorage.setItem("newUser", JSON.stringify(newUser));
+
+    finalClosedRegisterModal();
+
+    handleSuccess("Вы успешно зарегестрировались!");
+  };
 
   const handleSetActiveLink = (id) => {
     setActiveLink(id);
   };
-  const navigate = useNavigate();
-
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  // const handleCloseModal = () => {
-  //   setIsOpenModal(false);
-  // };
-  // const handleOpenModal = () => {
-  //   setIsOpenModal(true);
-  // };
 
   const closeModal = () => {
     setIsOpenModal(false);
@@ -50,10 +119,20 @@ const Header = () => {
     setIsRegisterModalOpen(false);
   };
 
+  const finalClosedRegisterModal = () => {
+    setIsRegisterModalOpen(false);
+  };
+
+  const userName = `${user?.sureName} ${user?.name}`;
+
   return (
     <div className="header">
       <div onClick={() => navigate(RoutePass.Home)} className="logo">
-        <img src="../Logov2.png" alt="" />
+        <img
+          onClick={() => handleSetActiveLink(0)}
+          src="../Logov2.png"
+          alt=""
+        />
       </div>
       <nav className="nav-menu">
         {navigationLink.map((link) => (
@@ -67,9 +146,13 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-      <button onClick={openLoginModal} className="login-button">
-        Войти
-      </button>
+      {user ? (
+        <button className="login-button">{userName}</button>
+      ) : (
+        <button onClick={openLoginModal} className="login-button">
+          Войти
+        </button>
+      )}
       <ReactModal
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
@@ -86,21 +169,27 @@ const Header = () => {
           </div>
           <div className="login-input-block">
             <input
+              maxLength={12}
+              className="registration-input"
               placeholder="Номер телефона"
-              className="login-input"
-              type="number"
+              onChange={(e) => setLoginPhoneNumber(e.target.value)}
+              value={loginPhoneNumber}
             />
             <input
+              className="registration-input"
               placeholder="Пароль"
-              className="login-input"
               type="password"
+              onChange={(e) => setLoginPassword(e.target.value)}
+              value={loginPassword}
             />
           </div>
           <div>
             <p className="forgot-your-password">Забыли пароль?</p>
           </div>
           <div>
-            <button className="registration-button">Войти</button>
+            <button onClick={handleLogin} className="registration-button">
+              Войти
+            </button>
           </div>
         </div>
       </ReactModal>
@@ -123,12 +212,48 @@ const Header = () => {
               </p>
             </div>
             <div className="input-block-registration">
-              <InputRegistration />
+              <input
+                className="registration-input"
+                placeholder="Фамилия"
+                type="text"
+                onChange={(e) => setSureName(e.target.value)}
+                value={sureName}
+              />
+              <input
+                className="registration-input"
+                placeholder="Имя"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              <input
+                maxLength={12}
+                className="registration-input"
+                placeholder="Номер телефона"
+                // type="text"
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                value={phoneNumber}
+              />
+              <input
+                className="registration-input"
+                placeholder="Придумайте пароль"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+              <input
+                className="registration-input"
+                placeholder="Подтвердите пароль"
+                type="password"
+                onChange={(e) => setReplayPassword(e.target.value)}
+                value={replayPassword}
+              />
+              {/* <InputRegistration /> */}
             </div>
           </div>
-          <div>
-            <button className="registration-button">Зарегестрироваться</button>
-          </div>
+          <button onClick={handleRegistration} className="registration-button">
+            Зарегестрироваться
+          </button>
         </div>
       </ReactModal>
     </div>

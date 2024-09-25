@@ -20,12 +20,19 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 36px; 
+  border-radius: 20px;
+  padding: 8px 32px;
+  width: 121px;
+  height: 52px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  background: #fff;
 }
 
 .all-help-modal{
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 
@@ -36,7 +43,8 @@
   height: 70px;
   padding: 8px 32px;
   max-width: auto;
-  width: 1575px;
+  width: 100%;
+  font-size: 32px;
 }
 
 .donation-button{
@@ -47,11 +55,11 @@
   color: #FFF;
   font-size: 32px;
   font-weight: 600;
-    line-height: 36px; 
+  line-height: 36px; 
 }
 
 .help-modal-input::placeholder{
- font-size: 40px;
+ font-size: 32px;
 }
 
 .help-modal-sum{
