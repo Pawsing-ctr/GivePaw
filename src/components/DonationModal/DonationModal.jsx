@@ -1,27 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../DonationModal/DonationModal.css";
 import "../Header/Header.css";
-import {
-  countPlus2Hungred,
-  countPlus5Hungred,
-  countPlusHundred,
-  countPlusThousand,
-  setValue,
-} from "../../redux/slice/countSlice";
-import { useState } from "react";
-import YouDonation from "../YouDonation/YouDonation";
-import DList from "../DList/DList";
+import { addDonation } from "../../redux/slice/donatsSlice";
+import { useEffect, useState } from "react";
 import { enqueueSnackbar } from "notistack";
 
 const DonationModal = () => {
-  const { value } = useSelector((state) => state.value);
-  const localDonat = localStorage.getItem("newDonation");
-  // console.log(value);
+  const { donats } = useSelector((state) => state.donats);
+  const localDonat = localStorage.getItem("donats");
 
   const dispatch = useDispatch();
-  const [donationInput, setDonationInput] = useState(0);
+  const [donationInput, setDonationInput] = useState("");
 
-  dispatch(setValue());
+  const handleSumDonationPrice = (value) => {
+    setDonationInput(String(Number(donationInput) + value));
+  };
 
   const handleSuccess = (message) => {
     enqueueSnackbar({
@@ -32,15 +25,21 @@ const DonationModal = () => {
 
   const handleDonation = () => {
     const newDonat = {
+      date: new Date().toLocaleDateString(),
       donationInput,
     };
 
-    dispatch(setValue(newDonat));
-
-    localStorage.setItem("newDonation", JSON.stringify(newDonat));
+    dispatch(addDonation(newDonat));
 
     handleSuccess("Спасибо за поддержку!");
+    setDonationInput("");
   };
+
+  useEffect(() => {
+    if (donats?.length) {
+      localStorage.setItem("donats", JSON.stringify(donats));
+    }
+  }, [donats]);
 
   return (
     <div className="all-help-modal">
@@ -54,38 +53,29 @@ const DonationModal = () => {
           value={donationInput}
           className="help-modal-input"
           placeholder="0,00 ₽"
-          type="text"
+          type="number"
         />
       </div>
       <div className="help-modal-sum">
-        {/* <p
-          onClick={dispatch(countPlusHundred(donationInput))}
-          className="sum-number"
-        >
+        <p onClick={() => handleSumDonationPrice(100)} className="sum-number">
           +100
         </p>
-        <p
-          onClick={dispatch(countPlus2Hungred(donationInput))}
-          className="sum-number"
-        >
+        <p onClick={() => handleSumDonationPrice(200)} className="sum-number">
           +200
         </p>
-        <p
-          onClick={dispatch(countPlus5Hungred(donationInput))}
-          className="sum-number"
-        >
+        <p onClick={() => handleSumDonationPrice(500)} className="sum-number">
           +500
         </p>
-        <p
-          onClick={dispatch(countPlusThousand(donationInput))}
-          className="sum-number"
-        >
+        <p onClick={() => handleSumDonationPrice(1000)} className="sum-number">
           +1000
-        </p> */}
-        {/* {youDonationList} */}
+        </p>
       </div>
       <div>
-        <button onClick={handleDonation} className="donation-button">
+        <button
+          disabled={!Number(donationInput)}
+          onClick={handleDonation}
+          className="donation-button"
+        >
           Помочь
         </button>
       </div>

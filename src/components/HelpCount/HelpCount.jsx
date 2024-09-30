@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setValue } from "../../redux/slice/countSlice";
+import { setValue } from "../../redux/slice/donatsSlice";
 const HelpCount = () => {
   return (
     <div className="stat-count">

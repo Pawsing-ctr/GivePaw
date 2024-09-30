@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../redux/slice/userSlice";
 import { CustomCursor } from "@feverus/react-custom-cursor";
 import "@feverus/react-custom-cursor/dist/style.css";
+import Cursor from "../../Icons/Cursor";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(0);
@@ -125,7 +126,7 @@ const Header = () => {
   };
 
   const userName = `${user?.sureName} ${user?.name}`;
-  // const muCursor = <img src="../Header/CursorKitty.png" alt="" />;
+  const muCursor = <img src="../Header/CursorKitty.png" alt="" />;
 
   return (
     <div className="header">
@@ -139,8 +140,9 @@ const Header = () => {
       <nav className="nav-menu">
         {navigationLink.map((link) => (
           <CustomCursor
+            scale={1.2}
             hoverClassName="qwerqwer"
-            cursor={"../Header/CursorKitty.png"}
+            cursor={<Cursor />}
           >
             <Link
               onClick={() => handleSetActiveLink(link.id)}

@@ -1,17 +1,17 @@
 import { useSelector } from "react-redux";
 
-const DList = () => {
-  const { value } = useSelector((state) => state.value);
-  const localDonat = localStorage.getItem("newDonation");
-  console.log(localDonat);
+const DList = ({ isShowMore }) => {
+  const { donats } = useSelector((state) => state.donats);
+  const filteredList = isShowMore ? donats : donats.slice(0, 4);
 
-  // const zxcv = `${localDonat.donationInput}`;
   return (
     <div>
-      <div>
-        <p className="donation-day">18 ноября 2024</p>
-        <p className="donation-input">{localDonat.donationInput}</p>
-      </div>
+      {filteredList.map((el) => (
+        <div>
+          <p className="donation-day">{el.date}</p>
+          <p className="donation-input">{el.donationInput}</p>
+        </div>
+      ))}
     </div>
   );
 };

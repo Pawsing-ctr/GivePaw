@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setUser } from "./redux/slice/userSlice";
-import { setValue } from "./redux/slice/countSlice";
+import { addDonation, setDonats } from "./redux/slice/donatsSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,13 +19,14 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const localUserDonat = localStorage.getItem("newDonation");
-  //   const donat = JSON.parse(localUserDonat);
-  //   if (donat) {
-  //     dispatch(setValue(donat));
-  //   }
-  // }, []);
+  useEffect(() => {
+    const localUserDonat = localStorage.getItem("donats");
+    const donat = JSON.parse(localUserDonat);
+    if (donat?.length) {
+      dispatch(setDonats(donat));
+    }
+  }, []);
+  // useEffect = функция, вызывается при создании компонента, когда идет рендер, и при изменении массива зависимостей, то есть если массив зависимостей пустой, useEffect вызовится 1 раз
 
   return (
     <SnackbarProvider>
