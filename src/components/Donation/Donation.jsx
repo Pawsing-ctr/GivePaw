@@ -2,8 +2,11 @@ import "../Donation/Donation.css";
 import HelpCount from "../HelpCount/HelpCount.jsx";
 import DonationModal from "../DonationModal/DonationModal.jsx";
 import Footer from "../Footer/Footer.jsx";
+import YouDonation from "../YouDonation/YouDonation.jsx";
+import { useDispatch, useSelector } from "react-redux";
 
 const Donation = () => {
+  const { user } = useSelector((state) => state.user);
   return (
     <div className="donation-page">
       <div>
@@ -21,12 +24,16 @@ const Donation = () => {
       </div>
       <div>
         <DonationModal />
+        {user ? (
+          <YouDonation />
+        ) : (
+          <p className="header-video">
+            Ваши пожертвования будут направлены на питание, лечение и
+            обустройство животных.
+          </p>
+        )}
       </div>
       <div className="block-text-video">
-        <p className="header-video">
-          Ваши пожертвования будут направлены на питание, лечение и обустройство
-          животных.
-        </p>
         <p className="opis-video">
           Мы верим, что каждый может внести свой вклад в помощь бездомным
           животным. Благотворительный фонд «Дай лапу» благодарит всех, кто не

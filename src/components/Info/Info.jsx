@@ -3,6 +3,7 @@ import "./Info.css";
 import Footer from "../Footer/Footer";
 import Slider from "../Slider/Slider";
 import { teamSlides, teamSlidesTitle } from "../../constants/slide";
+// import StringText from "../StringText/StringText";
 
 const Info = () => {
   return (
@@ -30,6 +31,7 @@ const Info = () => {
               счастливую жизнь.
             </p>
           </div>
+          {/* <StringText zxcv="description-platform" /> */}
           <div>
             <p className="color-text-info">
               Помагая животным мы помогаем и себе стать лучше и добрее. Давайте

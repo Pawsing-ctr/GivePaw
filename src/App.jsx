@@ -6,9 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setUser } from "./redux/slice/userSlice";
+import { setValue } from "./redux/slice/countSlice";
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const localUser = localStorage.getItem("newUser");
     const user = JSON.parse(localUser);
@@ -16,6 +18,14 @@ function App() {
       dispatch(setUser(user));
     }
   }, []);
+
+  // useEffect(() => {
+  //   const localUserDonat = localStorage.getItem("newDonation");
+  //   const donat = JSON.parse(localUserDonat);
+  //   if (donat) {
+  //     dispatch(setValue(donat));
+  //   }
+  // }, []);
 
   return (
     <SnackbarProvider>

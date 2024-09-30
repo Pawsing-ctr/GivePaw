@@ -5,9 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { RoutePass } from "../../constants/routePass";
 import cn from "classnames";
 import ReactModal from "react-modal";
-import { enqueueSnackbar, SnackbarProvider } from "notistack";
+import { enqueueSnackbar } from "notistack";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../redux/slice/userSlice";
+import { CustomCursor } from "@feverus/react-custom-cursor";
+import "@feverus/react-custom-cursor/dist/style.css";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(0);
@@ -25,7 +27,6 @@ const Header = () => {
 
   const { user } = useSelector((state) => state.user);
   const localUser = localStorage.getItem("newUser");
-  console.log(user);
 
   const dispatch = useDispatch();
 
@@ -124,6 +125,7 @@ const Header = () => {
   };
 
   const userName = `${user?.sureName} ${user?.name}`;
+  // const muCursor = <img src="../Header/CursorKitty.png" alt="" />;
 
   return (
     <div className="header">
@@ -136,14 +138,19 @@ const Header = () => {
       </div>
       <nav className="nav-menu">
         {navigationLink.map((link) => (
-          <Link
-            onClick={() => handleSetActiveLink(link.id)}
-            key={link.to}
-            className={cn("link-item", { isActive: link.id === activeLink })}
-            to={link.to}
+          <CustomCursor
+            hoverClassName="qwerqwer"
+            cursor={"../Header/CursorKitty.png"}
           >
-            {link.title}
-          </Link>
+            <Link
+              onClick={() => handleSetActiveLink(link.id)}
+              key={link.to}
+              className={cn("link-item", { isActive: link.id === activeLink })}
+              to={link.to}
+            >
+              {link.title}
+            </Link>
+          </CustomCursor>
         ))}
       </nav>
       {user ? (
