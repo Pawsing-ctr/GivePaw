@@ -137,13 +137,9 @@ const Header = () => {
   return (
     <div className="header">
       <img onClick={handleLogo} src="../Logov2.png" alt="" className="logo" />
-      <nav className="nav-menu">
-        {navigationLink.map((link) => (
-          <CustomCursor
-            scale={1.2}
-            hoverClassName="qwerqwer"
-            cursor={<Cursor />}
-          >
+      <CustomCursor scale={1.2} hoverClassName="qwerqwer" cursor={<Cursor />}>
+        <nav className="nav-menu">
+          {navigationLink.map((link) => (
             <Link
               onClick={() => handleSetActiveLink(link.id)}
               key={link.to}
@@ -152,9 +148,9 @@ const Header = () => {
             >
               {link.title}
             </Link>
-          </CustomCursor>
-        ))}
-      </nav>
+          ))}
+        </nav>
+      </CustomCursor>
 
       {user ? (
         <button className="login-button">{userName}</button>
