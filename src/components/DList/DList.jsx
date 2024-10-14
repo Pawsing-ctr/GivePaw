@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
+import "./DList.css";
 
 const DList = ({ isShowMore }) => {
   const { donats } = useSelector((state) => state.donats);
   const filteredList = isShowMore ? donats : donats.slice(0, 4);
 
   return (
-    <div>
+    <div className="all-you-donaition-sum">
       {filteredList.map((el) => (
         <div>
           <p className="donation-day">{el.date}</p>

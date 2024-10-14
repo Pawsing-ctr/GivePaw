@@ -31,6 +31,10 @@
 
 .logo{
   cursor: pointer;
+  vertical-align: top;
+  padding-right:  8px;
+  width: 100%;
+  max-width: 344px;
 }
 .link-item{
   color: black;
@@ -171,7 +175,51 @@ input::placeholder{
 }
 
 
-.qwerqwer{
-  width: 100px;
-  height: auto;
+.menu__btn {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+
+.menu__btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff; 
+  margin: 4px 0; 
+  transition: all 0.3s ease; 
+}
+
+@media (max-width:1725px){
+  .nav-menu a{
+    font-size: 24px;
+  }
+}
+
+@media (max-width:1545px){
+  .login-button{
+    font-size: 20px;
+  }
+}
+
+@media (max-width:1500px){
+  .header{
+    gap: 20px;
+  }
+}
+
+@media (max-width:1400px){
+  .logo{
+    width: 288px;
+    height: auto;
+  }
 }

@@ -26,6 +26,8 @@ const Header = () => {
   const [loginPhoneNumber, setLoginPhoneNumber] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
+  const [showBurgerMenu, setShowBurgerMenu] = useState("none");
+
   const { user } = useSelector((state) => state.user);
   const localUser = localStorage.getItem("newUser");
 
@@ -125,18 +127,16 @@ const Header = () => {
     setIsRegisterModalOpen(false);
   };
 
+  const handleLogo = () => {
+    navigate(RoutePass.Home);
+    handleSetActiveLink(0);
+  };
+
   const userName = `${user?.sureName} ${user?.name}`;
-  const muCursor = <img src="../Header/CursorKitty.png" alt="" />;
 
   return (
     <div className="header">
-      <div onClick={() => navigate(RoutePass.Home)} className="logo">
-        <img
-          onClick={() => handleSetActiveLink(0)}
-          src="../Logov2.png"
-          alt=""
-        />
-      </div>
+      <img onClick={handleLogo} src="../Logov2.png" alt="" className="logo" />
       <nav className="nav-menu">
         {navigationLink.map((link) => (
           <CustomCursor
@@ -155,6 +155,7 @@ const Header = () => {
           </CustomCursor>
         ))}
       </nav>
+
       {user ? (
         <button className="login-button">{userName}</button>
       ) : (

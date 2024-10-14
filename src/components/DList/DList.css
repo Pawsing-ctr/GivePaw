@@ -1,0 +1,5 @@
+.all-you-donaition-sum{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
