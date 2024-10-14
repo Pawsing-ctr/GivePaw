@@ -7,7 +7,7 @@
 
 .nav-menu {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   flex: 1;
   justify-content: space-between;
 }
