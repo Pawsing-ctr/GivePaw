@@ -17,8 +17,13 @@ export const navigationLink = [
     id: 3,
   },
   {
+    title: "Отчеты",
+    to: RoutePass.Reports,
+    id: 4,
+  },
+  {
     title: "Пожертвование",
     to: RoutePass.Donation,
-    id: 4,
+    id: 5,
   },
 ];

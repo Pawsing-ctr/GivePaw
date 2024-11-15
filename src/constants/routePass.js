@@ -4,4 +4,6 @@ export const RoutePass = {
   Volunteers: "/volunteers",
   Donation: "/donation",
   Home: "",
+  Reports: "/reports",
+  Report2024: "/reports/report2024",
 };

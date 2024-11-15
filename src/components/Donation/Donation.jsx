@@ -3,7 +3,7 @@ import HelpCount from "../HelpCount/HelpCount.jsx";
 import DonationModal from "../DonationModal/DonationModal.jsx";
 import Footer from "../Footer/Footer.jsx";
 import YouDonation from "../YouDonation/YouDonation.jsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Donation = () => {
   const { user } = useSelector((state) => state.user);

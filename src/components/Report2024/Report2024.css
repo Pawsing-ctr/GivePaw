@@ -1,0 +1,28 @@
+.secondcheck{
+  width: 240px;
+  height: 250px;
+}
+
+.firstcheck{
+  width: 330px;
+  height: 250px;
+}
+
+.check-img{
+  display: flex;
+}
+
+.check-title,
+.all-report2024{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.count-report{
+  font-size: 24px;
+}
+
+.report{
+  font-size: 40px;
+}

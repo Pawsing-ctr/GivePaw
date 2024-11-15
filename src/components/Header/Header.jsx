@@ -26,8 +26,6 @@ const Header = () => {
   const [loginPhoneNumber, setLoginPhoneNumber] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const [showBurgerMenu, setShowBurgerMenu] = useState("none");
-
   const { user } = useSelector((state) => state.user);
   const localUser = localStorage.getItem("newUser");
 
