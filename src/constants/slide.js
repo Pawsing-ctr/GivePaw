@@ -59,50 +59,62 @@ export const teamSlides = [
 export const allAnimal = [
   {
     src: "../Allanimal/Axel.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 1,
   },
   {
     src: "../Allanimal/Yasha.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 2,
   },
   {
     src: "../Allanimal/Alice.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 3,
   },
   {
     src: "../Allanimal/Myrka.jpg ",
+    heart: "../Allanimal/Heart.png",
     id: 4,
   },
   {
     src: "../Allanimal/Fayst.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 5,
   },
   {
     src: "../Allanimal/Felix.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 6,
   },
   {
     src: "../Allanimal/Oskar.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 7,
   },
   {
     src: "../Allanimal/Sena.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 8,
   },
   {
     src: "../Allanimal/Smoke.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 9,
   },
   {
     src: "../Allanimal/Leo.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 10,
   },
   {
     src: "../Allanimal/Garfild.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 11,
   },
   {
     src: "../Allanimal/Sonya.jpg",
+    heart: "../Allanimal/Heart.png",
     id: 12,
   },
 ];

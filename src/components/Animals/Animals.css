@@ -9,14 +9,13 @@
 .animal-img{
   border-radius: 20px;
   width: 385px;
-  height: 526px;
   height: 100%;
-    flex-direction: column;
-    display: flex;
+  object-fit: cover;
 }
 
 
 .img-block{
+  position: relative;
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -25,8 +24,14 @@
 }
 
 .animal-img-block{
-  display: flex;
+    display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
+.heart-img{
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  cursor: pointer;
+}

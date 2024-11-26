@@ -1,22 +1,17 @@
-import React from "react";
 import { allAnimal } from "../../constants/slide";
 import "./Animals.css";
+import AnimalImgHeart from "../AnimalImgHeart/AnimalImgHeart";
 
 const Animals = () => {
   return (
     <div className="animal-page">
       <div>
-        <p className="animal-title">Животные: 36</p>
+        <p className="animal-title">Животных: 36</p>
       </div>
       <div className="animal-img-block">
-        {allAnimal.map((el) => (
-          <div className="img-block">
-            <img className="animal-img" src={el.src} alt="" />
-          </div>
-        ))}
-      </div>
-      <div>
-        <p className="zxczxc">Показать еще</p>
+        {allAnimal.map((el) => {
+          return <AnimalImgHeart key={el.id} el={el}/>
+        })}
       </div>
     </div>
   );

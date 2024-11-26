@@ -54,6 +54,7 @@ const Header = () => {
     if (!loginPassword.trim()) {
       return handleError("Введите пароль!");
     }
+    return handleError("Пользователя с такими данными не существует");
   };
 
   const handleRegistration = () => {
