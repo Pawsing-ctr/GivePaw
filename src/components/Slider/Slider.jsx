@@ -3,7 +3,6 @@ import "./Slider.css";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useCallback, useRef } from "react";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
 import "swiper/css/autoplay";
 
 const PetSlider = ({ slides, sliderTitle }) => {
@@ -28,7 +27,11 @@ const PetSlider = ({ slides, sliderTitle }) => {
             type="button"
             className="custom-prev-arrow"
           >
-            <img src="../ArrowLeft.png" alt="Prev" />
+            <img
+              className="arrow-left-slider"
+              src="../ArrowLeft.png"
+              alt="Prev"
+            />
           </button>
 
           <button
@@ -36,12 +39,15 @@ const PetSlider = ({ slides, sliderTitle }) => {
             type="button"
             className="custom-next-arrow"
           >
-            <img src="../ArrowRight.png" alt="Next" />
+            <img
+              className="arrow-right-slider"
+              src="../ArrowRight.png"
+              alt="Next"
+            />
           </button>
         </div>
       </div>
       <Swiper
-        // modules={[Autoplay]}
         spaceBetween={60}
         grabCursor={true}
         loop={true}

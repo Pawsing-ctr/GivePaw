@@ -47,3 +47,57 @@
   font-weight: 400;
   line-height: 48px; 
 }
+
+@media (max-width:1012px){
+  .pet{
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width:908px){
+  .pet{
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (max-width:730px){
+  .pet{
+    height: 200px;
+    width: 200px;
+  }
+  .carousel-text {
+  font-size: 38px;
+  }
+
+  .arrow-right-slider,
+  .arrow-left-slider{
+    width: 55px;
+  } 
+}
+
+@media (max-width:600px){
+  .pet{
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media (max-width:510px){
+   .carousel-text {
+  font-size: 28px;
+  }
+
+  .arrow-right-slider,
+  .arrow-left-slider{
+    width: 45px;
+  } 
+}
+
+@media (max-width:438px){
+  .pet{
+    height: 130px;
+    width: 130px;
+  }
+}

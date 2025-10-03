@@ -220,14 +220,12 @@ input::placeholder{
 @media (max-width:1525px){
   .logo{
     width: 288px;
-    height: auto;
   }
 }
 
 @media (max-width:1525px){
   .logo{
     width: 250px;
-    height: auto;
   }
 }
 
@@ -240,5 +238,46 @@ input::placeholder{
 @media (max-width:1420px){
   .header{
     padding: 0px;
+  }
+}
+
+@media (max-width:1060px){
+  .nav-menu a {
+      font-size: 18px;
+  }
+}
+
+
+@media (max-width:1010px){
+  .logo {
+    width: 220px;
+  }
+  .login-button{
+    padding: 6px 20px;
+  }
+}
+
+@media (max-width:950px){
+  .nav-menu a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:850px){
+  .logo {
+    width: 180px;
+  }
+}
+
+@media (max-width:810px){
+ .login-button{
+    font-size: 15px;
+    padding: 4px 15px;
+  }
+}
+
+@media (max-width:790px){
+  .nav-menu{
+    gap: 20px
   }
 }

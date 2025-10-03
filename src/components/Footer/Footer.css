@@ -34,3 +34,35 @@
   padding-right:  8px;
 }
 
+@media (max-width:932px){
+ .vk-link{
+  font-size: 26px;
+ }
+}
+
+@media (max-width:776px){
+ .vk-link{
+  font-size: 20px;
+ }
+}
+
+@media (max-width:628px){
+  .vk-link-logo{
+    width: 50px;
+  }
+  .footer-title {
+  font-size: 40px;
+  }
+  .vk-link{
+  font-size: 16px;
+ }
+}
+
+@media (max-width:510px){
+  .vk-link-logo{
+    width: 40px;
+  }
+  .vk-link{
+  font-size: 12px;
+ }
+}

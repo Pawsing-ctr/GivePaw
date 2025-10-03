@@ -45,9 +45,7 @@ const Home = () => {
       <div>
         <PetSlider sliderTitle={petsSliderTitle} slides={petsSlides} />
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
       <ReactModal
         isOpen={isHelpModalOpen}
         onRequestClose={closeHelpModal}

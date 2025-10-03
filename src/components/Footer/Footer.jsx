@@ -4,18 +4,16 @@ import "../Footer/Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <div>
-        <p className="footer-title">Наши партнёры</p>
-      </div>
+      <p className="footer-title">Наши партнёры</p>
       <div className="footer-link">
         <div className="vk-link">
-          <img src="../vk.png" alt="" />
+          <img className="vk-link-logo" src="../vk.png" alt="" />
           <a className="vk-link" href="https://vk.com/catpes" target="_blank">
             ТМООПБЖ «КОТО-ПЕС» г.Таганрог
           </a>
         </div>
         <div className="vk-link">
-          <img src="../vk.png" alt="" />
+          <img className="vk-link-logo" src="../vk.png" alt="" />
           <a
             className="vk-link"
             href="https://vk.com/kot_i_pec"
@@ -25,7 +23,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="vk-link">
-          <img src="../vk.png" alt="" />
+          <img className="vk-link-logo" src="../vk.png" alt="" />
           <a
             className="vk-link"
             href="https://vk.com/predannoeserdce.help"
@@ -34,8 +32,8 @@ const Footer = () => {
             "Преданное сердце" Помощь животным
           </a>
         </div>
-        <div>
-          <img src="../vk.png" alt="" />
+        <div className="vk-link">
+          <img className="vk-link-logo" src="../vk.png" alt="" />
           <a
             className="vk-link"
             href="https://vk.com/animalspnz_fund58"
