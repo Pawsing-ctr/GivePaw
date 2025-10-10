@@ -48,6 +48,21 @@
   line-height: 48px; 
 }
 
+@media (max-width:1356px){
+  .positoin-worker-title{
+    font-size: 26px;
+  }
+}
+
+@media (max-width:1112px){
+  .positoin-worker-title{
+    font-size: 22px;
+  }
+  .team-name-title{
+  font-size: 26px;
+}
+}
+
 @media (max-width:1012px){
   .pet{
     height: 300px;
@@ -62,6 +77,16 @@
   }
 }
 
+
+@media (max-width:854px){
+ .positoin-worker-title{
+    font-size: 18px;
+  }
+  .team-name-title{
+  font-size: 20px;
+}
+}
+
 @media (max-width:730px){
   .pet{
     height: 200px;
@@ -74,6 +99,9 @@
   .arrow-right-slider,
   .arrow-left-slider{
     width: 55px;
+  }
+   .positoin-worker-title{
+    font-size: 12px;
   } 
 }
 
@@ -82,6 +110,9 @@
     height: 150px;
     width: 150px;
   }
+  .positoin-worker-title{
+    line-height: 15px;
+  } 
 }
 
 @media (max-width:510px){

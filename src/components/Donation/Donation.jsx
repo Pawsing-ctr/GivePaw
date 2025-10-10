@@ -9,12 +9,8 @@ const Donation = () => {
   const { user } = useSelector((state) => state.user);
   return (
     <div className="donation-page">
-      <div>
-        <p className="help-number">Помощь в цифрах</p>
-      </div>
-      <div>
-        <HelpCount />
-      </div>
+      <p className="help-number">Помощь в цифрах</p>
+      <HelpCount />
       <div>
         <p className="help-number-opis">
           Мы стараемся сделать наш мир немного добрее и спасти как можно больше

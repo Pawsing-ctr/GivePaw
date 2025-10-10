@@ -175,6 +175,9 @@ background-color: green;
   .live-text {
     font-size: 20px;
   }
+  .img-home{
+    display: none;
+  }
 }
 
 @media (max-width:630px){

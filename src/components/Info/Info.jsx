@@ -31,7 +31,6 @@ const Info = () => {
               счастливую жизнь.
             </p>
           </div>
-          {/* <StringText zxcv="description-platform" /> */}
           <div>
             <p className="color-text-info">
               Помагая животным мы помогаем и себе стать лучше и добрее. Давайте
@@ -43,9 +42,7 @@ const Info = () => {
       <div className="team-slider">
         <Slider sliderTitle={teamSlidesTitle} slides={teamSlides} />
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };

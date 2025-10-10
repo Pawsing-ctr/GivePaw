@@ -25,12 +25,10 @@ const YouDonation = () => {
         )}
       </div>
       <div className="right-you-donation-content">
-        <p className="title-right-content">
-          Благодарим вас за ваш вклад!
-          <p className="opis-right-content">
-            Ваши пожертвования будут направлены на питание, лечение и
-            обустройство животных.
-          </p>
+        <p className="title-right-content">Благодарим вас за ваш вклад!</p>
+        <p className="opis-right-content">
+          Ваши пожертвования будут направлены на питание, лечение и обустройство
+          животных.
         </p>
       </div>
     </div>

@@ -199,6 +199,10 @@ input::placeholder{
   transition: all 0.3s ease; 
 }
 
+label{
+  display: none;
+}
+
 @media (max-width:1848px){
   .nav-menu a{
     font-size: 24px;
@@ -281,3 +285,4 @@ input::placeholder{
     gap: 20px
   }
 }
+

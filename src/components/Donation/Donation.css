@@ -26,6 +26,7 @@
   font-weight: 400;
   line-height: 72px; 
   padding-top: 80px;
+  font-weight: 700;
 }
 
 .opis-video{
@@ -42,8 +43,8 @@
 }
 
 .video{
-  width: 1660px;
-  height: 804px;
+  width: 100%;
+  height: auto;
   border-radius: 20px;
 }
 
@@ -59,4 +60,58 @@ line-height: 72px;
   font-size: 32px;
   font-weight: 400;
   line-height: 48px;
+}
+
+@media (max-width:840px){
+  .header-video{
+    font-size: 38px;
+  }
+  .opis-video{
+    font-size: 24px;
+  }
+}
+
+@media (max-width:740px){
+  .video-title{
+    font-size: 40px;
+  }
+}
+
+@media (max-width:626px){
+  .header-video{
+    font-size: 30px;
+    line-height: 52px;
+  }
+   .video-title{
+    font-size: 34px;
+  }
+}
+
+@media (max-width:540px){
+   .video-title{
+    font-size: 24px;
+  }
+  .video-comment{
+    font-size: 26px;
+  }
+}
+
+@media (max-width:500px){
+.help-number {
+  font-size: 36px;
+  line-height: 60px;
+}
+.help-number-opis{
+  font-size: 26px;
+}
+ .opis-video{
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width:450px){
+.video-comment{
+    font-size: 22px;
+  }
 }

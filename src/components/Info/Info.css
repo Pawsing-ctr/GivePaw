@@ -37,3 +37,40 @@
   padding-bottom: 80px;
 }
 
+@media (max-width:1115px){
+.description-platform {
+  font-size: 26px;
+}
+}
+
+@media (max-width:665px){
+.title-text {
+  font-size: 38px;
+}
+.description-platform {
+  font-size: 20px;
+}
+.color-text-info {
+  font-size: 40px;
+}
+}
+
+@media (max-width:535px){
+.title-text {
+  font-size: 30px;
+}
+.color-text-info {
+  font-size: 34px;
+  line-height: 52px; 
+}
+}
+
+@media (max-width:425px){
+.title-text {
+  font-size: 25px;
+}
+.color-text-info {
+  font-size: 30px;
+  line-height: 42px; 
+}
+}

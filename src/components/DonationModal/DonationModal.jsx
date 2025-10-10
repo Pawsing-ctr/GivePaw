@@ -7,7 +7,6 @@ import { enqueueSnackbar } from "notistack";
 
 const DonationModal = () => {
   const { donats } = useSelector((state) => state.donats);
-  const localDonat = localStorage.getItem("donats");
 
   const dispatch = useDispatch();
   const [donationInput, setDonationInput] = useState("");
@@ -57,18 +56,30 @@ const DonationModal = () => {
         />
       </div>
       <div className="help-modal-sum">
-        <p onClick={() => handleSumDonationPrice(100)} className="sum-number">
+        <button
+          onClick={() => handleSumDonationPrice(100)}
+          className="sum-number"
+        >
           +100
-        </p>
-        <p onClick={() => handleSumDonationPrice(200)} className="sum-number">
+        </button>
+        <button
+          onClick={() => handleSumDonationPrice(200)}
+          className="sum-number"
+        >
           +200
-        </p>
-        <p onClick={() => handleSumDonationPrice(500)} className="sum-number">
+        </button>
+        <button
+          onClick={() => handleSumDonationPrice(500)}
+          className="sum-number"
+        >
           +500
-        </p>
-        <p onClick={() => handleSumDonationPrice(1000)} className="sum-number">
+        </button>
+        <button
+          onClick={() => handleSumDonationPrice(1000)}
+          className="sum-number"
+        >
           +1000
-        </p>
+        </button>
       </div>
       <div>
         <button
